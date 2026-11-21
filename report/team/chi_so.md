@@ -7,8 +7,8 @@
 | Chính (kết quả) | % yêu cầu đóng trong 24 giờ và không mở lại trong 7 ngày | `dong_trong_24h` bằng 1 và `mo_lai_trong_7_ngay` bằng 0, chia tổng số yêu cầu | 994/1.200 = **82,83%** |
 | Dùng | Tỉ lệ bỏ qua gợi ý | `quyet_dinh_xem_lai` là `sua` hoặc `bo`, chia số yêu cầu được xem lại | 48/177 = **27,12%** |
 | An toàn | Tỉ lệ lỗi lọt đến khách | `mo_lai_trong_7_ngay` bằng 1, chia tổng số yêu cầu | 51/1.200 = **4,25%** |
-| Dùng | Nhóm tự đề xuất: ... | ... | Không cần tính |
-| An toàn | Nhóm tự đề xuất: ... | ... | Không cần tính |
+| Dùng | Nhóm tự đề xuất: Tỉ lệ mở gợi ý trợ lý trong nhóm can thiệp | Số yêu cầu có nhân viên bấm xem gợi ý của trợ lý, chia tổng số yêu cầu nhóm can thiệp tiếp nhận | Đề xuất đo trong pilot (qua `agent_suggestion_shown` ÷ `refund_request_created`) |
+| An toàn | Nhóm tự đề xuất: Tỉ lệ sai sót số tiền hoàn qua kiểm toán mẫu | Số đơn có chênh lệch tiền hoàn (`chenh_lech != 0`), chia tổng số đơn kiểm toán mẫu ngẫu nhiên hằng tuần | Đề xuất đo trong pilot (qua `audit_sample_checked` để bắt lỗi ngầm) |
 
 Đây là các chỉ số quan sát trong đợt chạy thử trên bộ dữ liệu giả lập. Pilot có đối chứng song song sẽ dùng để ước lượng tác động của trợ lý.
 
@@ -35,10 +35,8 @@
 - **Chỉ số dùng (Tỉ lệ bỏ qua gợi ý):** Tính từ `staff_review_decision` (đếm `quyet_dinh` là `sua` hoặc `bo` chia cho tổng số lượt có `staff_review_decision`) nối qua `trace_id`.
 - **Chỉ số an toàn (Tỉ lệ lỗi lọt đến khách):** Tính từ `ticket_reopened` (trong 7 ngày) chia cho tổng số `refund_request_created` cùng `trace_id`.
 - **Chi phí thật thay thế số `simulated` ở tuần 1 pilot:** Tính từ `agent_run_completed` (`tokens_in`, `tokens_out`, `tool_calls`), `staff_review_decision` (`phut_xem_lai_thuc`), `staff_rework_completed` (`phut_lam_lai_thuc`) và `ticket_closed`.
-- **Chỉ số Dùng & An toàn tự đề xuất (chờ TV3 chốt tên cuối ở bảng E1):**
-  - Nếu dùng *% yêu cầu nhóm can thiệp có mở trợ lý*: đo được từ `agent_suggestion_shown` ÷ `refund_request_created` (`arm == 'treatment'`).
-  - Nếu dùng *% đơn hoàn sai tiền qua kiểm tra mẫu hằng tuần*: đo được từ `audit_sample_checked` (`chenh_lech != 0`).
-  - Nếu TV3 đề xuất chỉ số khác ngoài 10 event trên, cần bổ sung event có `trace_id` tương ứng hoặc ghi rõ *chưa đo được* trước khi chốt CP5.
+- **Chỉ số Dùng đề xuất (% mở gợi ý trợ lý nhóm can thiệp):** Đo được bằng cách đếm số `refund_request_created` (`arm == 'treatment'`) có phát sinh ít nhất một event `agent_suggestion_shown` cùng `trace_id`.
+- **Chỉ số An toàn đề xuất (% đơn hoàn sai tiền qua kiểm toán mẫu):** Đo được bằng cách đếm số event `audit_sample_checked` có `chenh_lech != 0` chia cho tổng số event `audit_sample_checked` ghi nhận trong đợt kiểm toán tuần.
 
 ## E2 · Rủi ro kinh tế
 
