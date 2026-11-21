@@ -37,7 +37,7 @@ Nhóm chia làm 5 chặng thực thi bám sát quy trình và ma trận phân va
 - **Phân loại lỗi:** Đạt tỉ lệ đồng thuận độc lập **90,0%** (18/20 ca), thống nhất khớp **20/20** đáp án chuẩn Google PAIR.
 - **Kế hoạch pilot:** Chia 20 nhân viên can thiệp vs 20 nhân viên đối chứng song song trên 12 depot. Cỡ mẫu hiệu dụng tối thiểu **859 yêu cầu/nhóm** (quan sát **5.980 yêu cầu/nhóm**, `m ≥ 299`, `DE = 6,96`).
 - **Đề xuất cuối:** **Go có điều kiện** (thu hẹp phạm vi về `noi_dia + hang_nang`, vá các lỗi kỹ thuật ca 7, 17, 18, 20, kiểm soát thời gian xem lại ≤ 4,8 phút/ca trong tuần đầu, Giám đốc vận hành ký chấp nhận MDE 6 điểm với power 64,17%).
-- **Kết quả duyệt chéo Gate 2a:** *(điền điểm và quyết định mà nhóm hội đồng chấm hồ sơ của nhóm mình sau buổi duyệt chéo)*. Phiếu nhóm mình chấm nhóm n + 1 nằm ở [phieu_cham.md](phieu_cham.md).
+- **Kết quả duyệt chéo Gate 2a:** Hội đồng **PhanDao** chấm hồ sơ của nhóm **30/30** (C6: 10, C7: 10, C8: 10), quyết định **Go có điều kiện**. Góp ý: chữ ký chấp nhận MDE 6 điểm (power 64,17%) phải xong trước khi mở pilot; nhóm đã dời điều kiện 4 trong `ho_so_launch_v0.md` từ 2026-12-15 về 2026-12-05. Phiếu nhóm mình chấm nhóm PhanDao nằm ở [phieu_cham.md](phieu_cham.md).
 
 ## 5. Khó khăn và cách xử lý
 
