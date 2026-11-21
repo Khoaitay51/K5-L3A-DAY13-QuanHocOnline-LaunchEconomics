@@ -33,7 +33,7 @@ Nhóm chia làm 5 chặng thực thi bám sát quy trình và ma trận phân va
 
 - **Chi phí thật:** CPS toàn mẫu là **4.472 đ** (`simulated`), gấp **16,3 lần** hóa đơn token+tool (274,7 đ). Thời gian làm lại (2.264.000 đ, 51,8%) và xem lại (1.780.000 đ, 40,7%) chiếm tới 92,5% tổng chi phí. Cả hệ thống tốn **5.865 đ/yêu cầu = 0,49×** mức 12.000 đ (`simulated`).
 - **Phạm vi tối ưu:** Thu hẹp pilot về `noi_dia` (**2.696 đ = 0,22×**, `simulated`) và `hang_nang` (**8.221 đ = 0,69×**, `simulated`). Loại bỏ `quoc_te` (22.515 đ = 1,88×, thành công chỉ 27,3%) và `doi_tac` (10.215 đ = 0,85×). Ở quy mô 45.000 yc/tháng kèm 40 triệu cố định, CPS trong phạm vi đạt **4.599 đ = 0,38×** (`simulated`).
-- **Giới hạn chạy lại:** Giới hạn 2 lần chạy là tối ưu nhất cho toàn công ty (**6.901.220 đ**), rẻ hơn chạy 3 lần (7.037.585 đ) và chạy 1 lần (7.449.781 đ do đẩy 319 ca sang nhân viên).
+- **Giới hạn chạy lại:** Giới hạn 2 lần chạy là tối ưu nhất cho toàn công ty (**6.901.220 đ**), rẻ hơn chạy 3 lần (7.037.585 đ) và chạy 1 lần (7.449.781 đ, `simulated`, do đẩy 319 ca sang nhân viên).
 - **Phân loại lỗi:** Đạt tỉ lệ đồng thuận độc lập **90,0%** (18/20 ca), thống nhất khớp **20/20** đáp án chuẩn Google PAIR.
 - **Kế hoạch pilot:** Chia 20 nhân viên can thiệp vs 20 nhân viên đối chứng song song trên 12 depot. Cỡ mẫu hiệu dụng tối thiểu **859 yêu cầu/nhóm** (quan sát **5.980 yêu cầu/nhóm**, `m ≥ 299`, `DE = 6,96`).
 - **Đề xuất cuối:** **Go có điều kiện** (thu hẹp phạm vi về `noi_dia + hang_nang`, vá các lỗi kỹ thuật ca 7, 17, 18, 20, kiểm soát thời gian xem lại ≤ 4,8 phút/ca trong tuần đầu, Giám đốc vận hành ký chấp nhận MDE 6 điểm với power 64,17%).
@@ -43,7 +43,7 @@ Nhóm chia làm 5 chặng thực thi bám sát quy trình và ma trận phân va
 
 1. **Hiệu ứng cụm làm suy giảm cỡ mẫu hiệu dụng:** Với `ICC = 0,02`, việc chia theo 6 depot cho trần hiệu dụng chỉ 300 (< 1.251 yêu cầu cần thiết); chia 20 nhân viên cũng có trần hiệu dụng 1.000.  
    *Cách xử lý:* Chấp nhận nới MDE lên 6 điểm phần trăm (cần 859 hiệu dụng, `m ≥ 299`), đồng thời công khai minh bạch con số bất lợi: power giảm còn **64,17%** nếu tác động thực chỉ đạt 5 điểm.
-2. **Kịch bản xem lại 100% có nguy cơ lỗ:** Nếu phải duyệt 100% gợi ý và thời gian làm lại trung bình là 15,30 phút (từ CSV), CPS đội lên **12.415 đ = 1,03×** (đắt hơn tự làm).  
+2. **Kịch bản xem lại 100% có nguy cơ lỗ:** Nếu phải duyệt 100% gợi ý và thời gian làm lại trung bình là 15,30 phút (từ CSV), CPS đội lên **12.415 đ = 1,03×** (`simulated`) (đắt hơn tự làm).  
    *Cách xử lý:* Tính toán ngưỡng hòa vốn bắt buộc cho thời gian xem lại là **≤ 4,8 phút/ca**, đưa vào điều kiện tiên quyết và thiết lập luật dừng chi phí > 8.000 đ.
 3. **Phân biệt lỗi Ngầm và lỗi Hệ thống:** Dễ nhầm lẫn các ca sai lệch trích dẫn hoặc bảng giá cũ.  
    *Cách xử lý:* Thống nhất nguyên tắc: lỗi Hệ thống là lỗi vi phạm đã lộ ra và có người thấy; lỗi Ngầm là lỗi không ai nhận ra (kể cả khách và hệ thống) cho tới khi kiểm toán mẫu.

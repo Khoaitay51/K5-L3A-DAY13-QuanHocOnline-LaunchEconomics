@@ -16,7 +16,7 @@ Nhóm: `QuanHocOnline` · Lớp: `L3A`
 
 **Đề xuất:** **Go có điều kiện** (chỉ mở pilot giới hạn sau khi thỏa mãn 4 điều kiện tiên quyết):
 
-1. **Thu hẹp phạm vi pilot:** Chỉ hỗ trợ `noi_dia` (0,22×) và `hang_nang` (0,69×); loại bỏ hoàn toàn `quoc_te` (1,88×, thành công 27,3%) và `doi_tac` (0,85×) để chuyển nhân viên xử lý thủ công. *Người phụ trách:* Quản lý sản phẩm trợ lý hoàn phí. *Ngày kiểm tra:* 2026-12-01.
+1. **Thu hẹp phạm vi pilot:** Chỉ hỗ trợ `noi_dia` (0,22×) và `hang_nang` (0,69×); loại bỏ hoàn toàn `quoc_te` (1,88×, thành công 27,3%) và `doi_tac` (0,85×) (`simulated`) để chuyển nhân viên xử lý thủ công. *Người phụ trách:* Quản lý sản phẩm trợ lý hoàn phí. *Ngày kiểm tra:* 2026-12-01.
 2. **Khắc phục lỗi hệ thống cốt lõi trước khi bấm nút:** Tích hợp khóa chống hoàn trùng (Ca 20), xác thực giao dịch sổ cái HTTP 200 trước khi báo thành công (Ca 7), cơ chế xóa cache khi đổi bảng giá (Ca 17), chuẩn hóa tin nhắn nêu rõ công thức tính (Ca 18). *Người phụ trách:* Kỹ sư trưởng Agent. *Ngày kiểm tra:* 2026-12-05.
 3. **Kiểm soát thời gian xem lại trong tuần 1:** Thay phút `simulated` bằng phút đo thật từ `staff_review_decision`; giữ thời gian xem lại ≤ 4,8 phút/ca (ngưỡng hòa vốn), vì xem lại 100% với 15,3 phút làm lại tốn 12.415 đ = 1,03× (`simulated`), có kế hoạch giảm tỉ lệ xem lại theo bậc. *Người phụ trách:* Trưởng nhóm CSKH. *Ngày kiểm tra:* 2026-12-15.
 4. **Ký chấp nhận đánh đổi cỡ mẫu và ngưỡng an toàn:** Chấp nhận MDE 6 điểm (power chỉ 64,17% nếu tác động thật là 5 điểm); luật dừng an toàn so với đối chứng (≥ 2 điểm) kèm trần 6%, vì tỉ lệ mở lại nền đã là 3,97% trong phạm vi. *Người phụ trách:* Giám đốc vận hành LogiX-VN. *Ngày kiểm tra:* 2026-12-05, trước khi mở bước rollout 0.10 (sửa theo góp ý hội đồng PhanDao).
