@@ -5,7 +5,7 @@
 - Tên nhóm: `QuanHocOnline`
 - Lớp: `L3A`
 - Repo nhóm: `K5-L3A-DAY13-QuanHocOnline-LaunchEconomics` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt: `https://github.com/Khoaitay51/K5-L3A-DAY13-QuanHocOnline-LaunchEconomics` · nhánh `main` · commit chốt nội dung `23cfc5d` (commit ngay sau chỉ ghi dòng này)
+- URL repo, nhánh nộp, commit chốt: `https://github.com/Khoaitay51/K5-L3A-DAY13-QuanHocOnline-LaunchEconomics` · nhánh `main` · commit chốt nội dung `dad68f0` (commit ngay sau chỉ ghi dòng này)
 
 ## Thành viên
 
