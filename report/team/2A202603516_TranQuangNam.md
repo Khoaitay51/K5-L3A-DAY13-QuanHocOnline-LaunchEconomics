@@ -16,7 +16,7 @@ Copy từ file mẫu `report/team/MSSV_HoTen.md`.
 - **CP3 (Phân loại lỗi & Khắc phục):** Tự gắn nhãn độc lập toàn bộ 20 ca lỗi theo 5 nhóm Google PAIR trong 8 phút (ngồi tách biệt, không trao đổi); so sánh với Người gắn nhãn 2 (TV4), tính tỉ lệ đồng thuận (đạt 90,0%), viết quy tắc phân biệt cho 2 ca lệch (Ca 6, Ca 13) và chủ trì hoàn thiện bảng khắc phục 5 ca đủ 5 loại có cách phát hiện đo được trong `report/team/bang_loi.md`.
 - **CP4 (Kế hoạch pilot):** Hoàn thiện 5 câu D2 kiểm tra "tách được tác động", phân tích đánh đổi MDE 6 điểm (chấp nhận power 64,17% tại 5 điểm), xác lập ngưỡng an toàn dựa trên tỉ lệ mở lại hiện tại (3,97%–4,25%), thiết lập 3 luật dừng định lượng đủ 4 vế (`NẾU – TRONG – THÌ – KHÔNG THÌ`), quy định quy trình rollback 30 phút và xóa sạch dấu `?` trong `report/team/pilot_plan.yaml`.
 - **CP5 (Chỉ số, Rủi ro & Hồ sơ Gate 2a):** Đề xuất 1 chỉ số Dùng (% mở gợi ý trợ lý nhóm can thiệp) và 1 chỉ số An toàn (% đơn hoàn sai tiền qua kiểm toán mẫu) trong bảng E1 `report/team/chi_so.md`; phối hợp cùng TV4 rà soát, hoàn thiện và khóa hồ sơ 1 trang `report/team/ho_so_launch_v0.md` phục vụ duyệt chéo Gate 2a lúc 17:00.
-- **Duyệt chéo & Đóng gói:** Đại diện nhóm chủ trì chấm phản biện chéo nhóm bạn (Nhóm 2 Lớp L3A) tại `report/team/phieu_cham.md`, chấm điểm định lượng C6–C8 (đạt 30/30), đặt câu hỏi phản biện sâu và ghi lại câu trả lời tại lớp; chủ trì viết báo cáo nhóm `report/team/group_report.md`; cập nhật thông tin thành viên và ma trận đóng góp trong `TEAM.md`.
+- **Duyệt chéo & Đóng gói:** Đại diện nhóm chủ trì chấm phản biện chéo nhóm bạn (PhanDao, Lớp L3A) tại `report/team/phieu_cham.md`, chấm điểm định lượng C6–C8 (đạt 30/30), đặt câu hỏi phản biện sâu và ghi lại câu trả lời tại lớp; chủ trì viết báo cáo nhóm `report/team/group_report.md`; cập nhật thông tin thành viên và ma trận đóng góp trong `TEAM.md`.
 
 ## 3. Đóng góp cụ thể
 
@@ -34,7 +34,7 @@ Copy từ file mẫu `report/team/MSSV_HoTen.md`.
   - Cập nhật mục Kiểm tra chéo đảm bảo 100% các chỉ số đều có event và `trace_id` đo lường tương ứng.
 - **Hồ sơ launch v0 và Duyệt chéo Gate 2a ([ho_so_launch_v0.md](ho_so_launch_v0.md), [phieu_cham.md](phieu_cham.md)):**
   - Rà soát hồ sơ 1 trang: 7 mục đều có con số định lượng, trạng thái chuẩn (`Giả lập` cho Mục 1, 2, 3, 7; `Xong, có bằng chứng` cho Mục 4, 5, 6), vai trò phụ trách đơn nhất và đề xuất cuối **Go có điều kiện** kèm 3 điều kiện và ngày kiểm tra cụ thể.
-  - Chấm chéo nhóm bạn trên `phieu_cham.md` đạt 30/30 điểm (C6: 10đ, C7: 10đ, C8: 10đ) với lý do định lượng có số, đặt câu hỏi tình huống về kịch bản xem lại 100% (1,03×) và ghi nhận câu trả lời giải pháp phân tầng kiểm toán của đội bạn.
+  - Chấm chéo nhóm bạn trên `phieu_cham.md` đạt 30/30 điểm (C6: 10đ, C7: 10đ, C8: 10đ) với lý do định lượng có số, đặt câu hỏi về chi phí cố định ở bước rollout 0.10 (khoảng 3.375 việc thành công/tháng, chi phí mỗi việc cộng cố định ≈ 15.266 đ = 1,27× [simulated], dưới điểm hòa vốn khoảng 4.660 việc mà PhanDao tự tính) và ghi nhận câu trả lời của đội bạn trong `phieu_cham.md`.
 - **Báo cáo nhóm ([group_report.md](group_report.md)):**
   - Chủ trì tổng hợp báo cáo nhóm ngắn gọn 2 trang, đầy đủ 8 mục tiêu chuẩn, dẫn nguồn tài liệu tham khảo khoa học (Cost-of-Pass, Google PAIR, statsmodels).
 

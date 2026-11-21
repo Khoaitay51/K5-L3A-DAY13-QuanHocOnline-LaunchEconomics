@@ -80,7 +80,7 @@ Sao chép mục dưới đây cho từng thành viên.
 - Gắn nhãn độc lập 20 ca lỗi CP3 theo 5 nhóm Google PAIR, tính đồng thuận (đạt 90,0%) và chủ trì hoàn thiện bảng khắc phục 5 ca trong `report/team/bang_loi.md`.
 - Hoàn thiện 5 câu D2 "tách được tác động", đánh đổi MDE 6 điểm và power 64,17%, tỉ lệ mở lại hiện tại (3,97%–4,25%) và 3 luật dừng định lượng 4 vế trong `report/team/pilot_plan.yaml`.
 - Đề xuất 2 chỉ số mới (Dùng & An toàn) trong `report/team/chi_so.md`; phối hợp rà soát và khóa hồ sơ 1 trang `report/team/ho_so_launch_v0.md`.
-- Đại diện nhóm chủ trì chấm phản biện chéo nhóm bạn tại `report/team/phieu_cham.md` (30/30đ) và viết báo cáo nhóm `report/team/group_report.md`.
+- Đại diện nhóm chủ trì chấm phản biện chéo nhóm **PhanDao** tại `report/team/phieu_cham.md` (30/30đ, Go có điều kiện) và viết báo cáo nhóm `report/team/group_report.md`.
 
 ### Đóng góp cụ thể
 
@@ -88,7 +88,7 @@ Sao chép mục dưới đây cho từng thành viên.
 - Xây dựng 3 luật dừng 4 vế (An toàn, Chi phí, Mức độ sử dụng) và quy trình rollback 30 phút trong `pilot_plan.yaml`; làm sạch mọi dấu `?` và verify với `yaml.safe_load`.
 - Đề xuất 2 chỉ số đo lường trong pilot: % mở gợi ý trợ lý nhóm can thiệp và % đơn hoàn sai tiền qua kiểm toán mẫu hằng tuần để bắt lỗi ngầm.
 - Hoàn thiện và khóa hồ sơ launch v0 đúng 1 trang, đủ 7 mục có số định lượng, trạng thái hợp lệ và đề xuất Go có điều kiện có 3 điều kiện và ngày kiểm tra.
-- Chấm chéo nhóm bạn 30/30 điểm trên `phieu_cham.md` và viết báo cáo nhóm 8 mục chuẩn `group_report.md`.
+- Chấm chéo nhóm PhanDao 30/30 điểm trên `phieu_cham.md`, đặt câu hỏi về chi phí cố định ở bước rollout 0.10 (≈ 15.266 đ = 1,27× [simulated]), và viết báo cáo nhóm 8 mục chuẩn `group_report.md`.
 
 ### Bằng chứng
 
