@@ -13,8 +13,8 @@
 | --: | ------ | ---- | ----- | ------ | ------- |
 |   1 | Phạm Trường Chinh | 2A202603426 | phemchinh1708@gmail.com | Khoaitay51 | Người viết code (CP1–CP2) → Kỹ sư kiểm chứng & Event (CP3–CP5) |
 |   2 | Nguyễn Minh Quân | 2A202603510 | | | Người kiểm số (CP1–CP2) → Người viết code (CP4–CP5) |
-|   3 |        |      |       |        |         |
-|   4 |        |      |       |        |         |
+|   3 | Trần Quang Nam | 2A202603516 | wgnam2k4@gmail.com | wgnam2k4 | Người gắn nhãn 1 & QA / Gatekeeper |
+|   4 |        |      |       |        | Người gắn nhãn 2 kiêm giữ hồ sơ |
 
 Bốn vai của lab:
 
@@ -65,12 +65,34 @@ Sao chép mục dưới đây cho từng thành viên.
 ### Đóng góp cụ thể
 
 - Đối chiếu chi phí theo giới hạn số lần chạy. Hai lần chạy cho chi phí toàn hệ thống thấp nhất là 6.901.220 đ (`simulated`).
-- Tính phương án 20 nhân viên mỗi nhóm, tối thiểu 299 yêu cầu mỗi người để phát hiện chênh lệch 6 điểm phần trăm, và power 64,17% nếu tác động thực chỉ đạt 5 điểm.
+- Tính phương án 20 nhân viên mỗi nhóm, tối thiểu 299 yêu cầu mỗi người để phát hiện chênh lệch 6 điểm phần trăm, và power 64,17% nếu tác động thật chỉ đạt 5 điểm.
 - Tính các tỷ lệ quan sát E1 là 82,83%, 27,12% và 4,25%. Ghi ba rủi ro kinh tế về làm lại, xem lại và khối lượng.
 
 ### Bằng chứng
 
 - `src/lab13.py`, `report/team/bang_chi_phi.md`, `report/team/pilot_plan.yaml` (D1), `report/team/chi_so.md` (số E1 và bảng E2), `report/team/2A202603510_NguyenMinhQuan.md`.
+
+## TranQuangNam-2A202603516
+
+### Phần việc phụ trách
+
+- Đảm nhiệm vai trò Người gắn nhãn 1 & QA / Gatekeeper, giám sát chất lượng hồ sơ và bám sát Rubric C1–C8.
+- Gắn nhãn độc lập 20 ca lỗi CP3 theo 5 nhóm Google PAIR, tính đồng thuận (đạt 90,0%) và chủ trì hoàn thiện bảng khắc phục 5 ca trong `report/team/bang_loi.md`.
+- Hoàn thiện 5 câu D2 "tách được tác động", đánh đổi MDE 6 điểm và power 64,17%, tỉ lệ mở lại hiện tại (3,97%–4,25%) và 3 luật dừng định lượng 4 vế trong `report/team/pilot_plan.yaml`.
+- Đề xuất 2 chỉ số mới (Dùng & An toàn) trong `report/team/chi_so.md`; phối hợp rà soát và khóa hồ sơ 1 trang `report/team/ho_so_launch_v0.md`.
+- Đại diện nhóm chủ trì chấm phản biện chéo nhóm bạn tại `report/team/phieu_cham.md` (30/30đ) và viết báo cáo nhóm `report/team/group_report.md`.
+
+### Đóng góp cụ thể
+
+- Gắn nhãn độc lập 20 ca lỗi, trùng 18/20 ca với TV4 (90,0% đồng thuận); chốt nhãn thống nhất khớp 20/20 với chuẩn Google PAIR; lập bảng 5 ca khắc phục đo được có ngưỡng và vai trò phụ trách.
+- Xây dựng 3 luật dừng 4 vế (An toàn, Chi phí, Mức độ sử dụng) và quy trình rollback 30 phút trong `pilot_plan.yaml`; làm sạch mọi dấu `?` và verify với `yaml.safe_load`.
+- Đề xuất 2 chỉ số đo lường trong pilot: % mở gợi ý trợ lý nhóm can thiệp và % đơn hoàn sai tiền qua kiểm toán mẫu hằng tuần để bắt lỗi ngầm.
+- Hoàn thiện và khóa hồ sơ launch v0 đúng 1 trang, đủ 7 mục có số định lượng, trạng thái hợp lệ và đề xuất Go có điều kiện có 3 điều kiện và ngày kiểm tra.
+- Chấm chéo nhóm bạn 30/30 điểm trên `phieu_cham.md` và viết báo cáo nhóm 8 mục chuẩn `group_report.md`.
+
+### Bằng chứng
+
+- `report/team/bang_loi.md`, `report/team/pilot_plan.yaml`, `report/team/chi_so.md`, `report/team/ho_so_launch_v0.md`, `report/team/phieu_cham.md`, `report/team/group_report.md`, `report/team/2A202603516_TranQuangNam.md`.
 
 ## HoVaTen-MSSV
 
