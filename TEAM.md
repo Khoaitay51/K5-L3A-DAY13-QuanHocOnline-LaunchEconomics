@@ -12,7 +12,7 @@
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
 |   1 | Phạm Trường Chinh | 2A202603426 | phemchinh1708@gmail.com | Khoaitay51 | Người viết code (CP1–CP2) → Kỹ sư kiểm chứng & Event (CP3–CP5) |
-|   2 |        |      |       |        |         |
+|   2 | Nguyễn Minh Quân | 2A202603510 | | | Người kiểm số (CP1–CP2) → Người viết code (CP4–CP5) |
 |   3 |        |      |       |        |         |
 |   4 |        |      |       |        |         |
 
@@ -54,6 +54,23 @@ Sao chép mục dưới đây cho từng thành viên.
 ### Bằng chứng
 
 - `src/lab13.py`, `report/team/chi_so.md` (phần Danh sách event & Kiểm tra chéo), `report/team/2A202603426_PhamTruongChinh.md`, `IMPLEMENTATION_PLAN.md`.
+
+## NguyenMinhQuan-2A202603510
+
+### Phần việc phụ trách
+
+- Kiểm số và điền bảng chi phí A1–A4, B1–B4.
+- Tiếp quản `src/lab13.py` để tính cỡ mẫu pilot D1 và ba chỉ số E1. Ghi số liệu D1 trong kế hoạch pilot và lập bảng rủi ro kinh tế E2.
+
+### Đóng góp cụ thể
+
+- Đối chiếu chi phí theo giới hạn số lần chạy. Hai lần chạy cho chi phí toàn hệ thống thấp nhất là 6.901.220 đ (`simulated`).
+- Tính phương án 20 nhân viên mỗi nhóm, tối thiểu 299 yêu cầu mỗi người để phát hiện chênh lệch 6 điểm phần trăm, và power 64,17% nếu tác động thực chỉ đạt 5 điểm.
+- Tính các tỷ lệ quan sát E1 là 82,83%, 27,12% và 4,25%. Ghi ba rủi ro kinh tế về làm lại, xem lại và khối lượng.
+
+### Bằng chứng
+
+- `src/lab13.py`, `report/team/bang_chi_phi.md`, `report/team/pilot_plan.yaml` (D1), `report/team/chi_so.md` (số E1 và bảng E2), `report/team/2A202603510_NguyenMinhQuan.md`.
 
 ## HoVaTen-MSSV
 

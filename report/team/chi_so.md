@@ -4,13 +4,13 @@
 
 | Loại | Chỉ số | Công thức | Tính thử trên 1.200 yêu cầu |
 | --- | --- | --- | --- |
-| Chính (kết quả) | % yêu cầu đóng trong 24 giờ và không mở lại trong 7 ngày | `dong_trong_24h` bằng 1 và `mo_lai_trong_7_ngay` bằng 0, chia tổng số yêu cầu | ... |
-| Dùng | Tỉ lệ bỏ qua gợi ý | `quyet_dinh_xem_lai` là `sua` hoặc `bo`, chia số yêu cầu được xem lại | ... |
-| An toàn | Tỉ lệ lỗi lọt đến khách | `mo_lai_trong_7_ngay` bằng 1, chia tổng số yêu cầu | ... |
+| Chính (kết quả) | % yêu cầu đóng trong 24 giờ và không mở lại trong 7 ngày | `dong_trong_24h` bằng 1 và `mo_lai_trong_7_ngay` bằng 0, chia tổng số yêu cầu | 994/1.200 = **82,83%** |
+| Dùng | Tỉ lệ bỏ qua gợi ý | `quyet_dinh_xem_lai` là `sua` hoặc `bo`, chia số yêu cầu được xem lại | 48/177 = **27,12%** |
+| An toàn | Tỉ lệ lỗi lọt đến khách | `mo_lai_trong_7_ngay` bằng 1, chia tổng số yêu cầu | 51/1.200 = **4,25%** |
 | Dùng | Nhóm tự đề xuất: ... | ... | Không cần tính |
 | An toàn | Nhóm tự đề xuất: ... | ... | Không cần tính |
 
-Viết "chỉ số trong đợt chạy thử là …", không viết "trợ lý đã nâng chỉ số": đợt chạy thử không có nhóm đối chứng.
+Đây là các chỉ số quan sát trong đợt chạy thử trên bộ dữ liệu giả lập. Pilot có đối chứng song song sẽ dùng để ước lượng tác động của trợ lý.
 
 ## Danh sách event
 
@@ -46,5 +46,6 @@ Viết "chỉ số trong đợt chạy thử là …", không viết "trợ lý 
 
 | Rủi ro | Tác động đã tính | Dấu hiệu theo dõi | Hành động | Người phụ trách |
 | --- | --- | --- | --- | --- |
-| ... | ... | ... | ... | ... |
-| ... | ... | ... | ... | ... |
+| Số ca làm lại tăng | Nếu số ca làm lại gấp đôi, chi phí tăng từ 4.472 lên **6.787 đ/việc thành công (+51,8%)** (`simulated`, B1). | Theo dõi số ca và tổng phút qua `staff_rework_completed` hằng tuần, phân theo loại yêu cầu. | Rà nguyên nhân của loại tăng mạnh nhất và tạm chuyển các ca thuộc loại đó sang xử lý thủ công trong khi khắc phục. | Trưởng nhóm CSKH |
+| Duy trì xem lại 100% gợi ý | Tốn **11.743 đ (0,98×)** với 9 phút làm lại, hoặc **12.415 đ (1,03×)** với trung bình từ CSV xấp xỉ 15,30 phút (`simulated`, B4). | Theo dõi tỉ lệ gợi ý được xem lại và phút xem lại mỗi ca qua `agent_suggestion_shown` và `staff_review_decision`. | Rà chi phí theo tuần, giữ phạm vi hiện tại khi vượt ngưỡng hòa vốn 4,8 phút/ca trong kịch bản làm lại dài hơn (`simulated`). | Quản lý sản phẩm |
+| Khối lượng giảm một nửa | Phần cố định tăng từ 1.185 lên **2.370 đ/việc thành công**, đưa chi phí lên **5.784 đ/việc thành công** (`simulated`, A4). | Theo dõi khối lượng và số việc thành công hằng tuần từ `refund_request_created` và `ticket_closed` trong phạm vi pilot. | Tính lại chi phí theo khối lượng quan sát được trước khi quyết định mở rộng. | Giám đốc vận hành |
