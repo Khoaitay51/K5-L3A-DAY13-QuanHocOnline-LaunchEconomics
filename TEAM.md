@@ -14,7 +14,7 @@
 |   1 | Phạm Trường Chinh | 2A202603426 | phemchinh1708@gmail.com | Khoaitay51 | Người viết code (CP1–CP2) → Kỹ sư kiểm chứng & Event (CP3–CP5) |
 |   2 | Nguyễn Minh Quân | 2A202603510 | | | Người kiểm số (CP1–CP2) → Người viết code (CP4–CP5) |
 |   3 | Trần Quang Nam | 2A202603516 | wgnam2k4@gmail.com | wgnam2k4 | Người gắn nhãn 1 & QA / Gatekeeper |
-|   4 | Nguyễn Văn Ba | 2A202603489 | | | Người gắn nhãn 2 kiêm giữ hồ sơ |
+|   4 | Nguyễn Văn Ba | 2A202603489 | nguyenvanba.tinhoc@gmail.com | | Người gắn nhãn 2 kiêm giữ hồ sơ |
 
 Bốn vai của lab:
 

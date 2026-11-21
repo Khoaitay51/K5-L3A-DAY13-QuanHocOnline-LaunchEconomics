@@ -4,7 +4,7 @@
 
 - Họ tên: Nguyễn Văn Ba
 - MSSV: `2A202603489`
-- Email:
+- Email: nguyenvanba.tinhoc@gmail.com
 - Nhóm: `QuanHocOnline` · Lớp `L3A`
 - Vai trong nhóm: **TV4 — Người gắn nhãn 2 kiêm giữ hồ sơ**
 
