@@ -12,9 +12,9 @@
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
 |   1 | Phạm Trường Chinh | 2A202603426 | phemchinh1708@gmail.com | Khoaitay51 | Người viết code (CP1–CP2) → Kỹ sư kiểm chứng & Event (CP3–CP5) |
-|   2 | Nguyễn Minh Quân | 2A202603510 | | | Người kiểm số (CP1–CP2) → Người viết code (CP4–CP5) |
+|   2 | Nguyễn Minh Quân | 2A202603510 | minhquan2955@gmail.com | minhquan2955 | Người kiểm số (CP1–CP2) → Người viết code (CP4–CP5) |
 |   3 | Trần Quang Nam | 2A202603516 | wgnam2k4@gmail.com | wgnam2k4 | Người gắn nhãn 1 & QA / Gatekeeper |
-|   4 | Nguyễn Văn Ba | 2A202603489 | nguyenvanba.tinhoc@gmail.com | | Người gắn nhãn 2 kiêm giữ hồ sơ |
+|   4 | Nguyễn Văn Ba | 2A202603489 | nguyenvanba.tinhoc@gmail.com | xtraiter | Người gắn nhãn 2 kiêm giữ hồ sơ |
 
 Bốn vai của lab:
 
@@ -35,7 +35,7 @@ report/team/MSSV_HoTen.md
 
 Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 
-Sao chép mục dưới đây cho từng thành viên.
+Phần việc, đóng góp và bằng chứng của từng thành viên:
 
 ## PhamTruongChinh-2A202603426
 
@@ -87,7 +87,7 @@ Sao chép mục dưới đây cho từng thành viên.
 - Gắn nhãn độc lập 20 ca lỗi, trùng 18/20 ca với TV4 (90,0% đồng thuận); chốt nhãn thống nhất khớp 20/20 với chuẩn Google PAIR; lập bảng 5 ca khắc phục đo được có ngưỡng và vai trò phụ trách.
 - Xây dựng 3 luật dừng 4 vế (An toàn, Chi phí, Mức độ sử dụng) và quy trình rollback 30 phút trong `pilot_plan.yaml`; làm sạch mọi dấu `?` và verify với `yaml.safe_load`.
 - Đề xuất 2 chỉ số đo lường trong pilot: % mở gợi ý trợ lý nhóm can thiệp và % đơn hoàn sai tiền qua kiểm toán mẫu hằng tuần để bắt lỗi ngầm.
-- Hoàn thiện và khóa hồ sơ launch v0 đúng 1 trang, đủ 7 mục có số định lượng, trạng thái hợp lệ và đề xuất Go có điều kiện có 3 điều kiện và ngày kiểm tra.
+- Hoàn thiện và khóa hồ sơ launch v0 đúng 1 trang, đủ 7 mục có số định lượng, trạng thái hợp lệ và đề xuất Go có điều kiện có 4 điều kiện, mỗi điều kiện một vai trò và ngày kiểm tra.
 - Chấm chéo nhóm PhanDao 30/30 điểm trên `phieu_cham.md`, đặt câu hỏi về chi phí cố định ở bước rollout 0.10 (≈ 15.266 đ = 1,27× [simulated]), và viết báo cáo nhóm 8 mục chuẩn `group_report.md`.
 
 ### Bằng chứng
@@ -107,21 +107,10 @@ Sao chép mục dưới đây cho từng thành viên.
 - Sửa `src/lab13.py` để `python lab13.py` chạy được trên console Windows (trước đó lỗi `UnicodeEncodeError` ngay dòng đầu).
 - Sửa `ho_so_launch_v0.md`: tách điều kiện có hai vai phụ trách thành hai điều kiện một vai; thêm điều kiện ký chấp nhận MDE 6 điểm (power 64,17%).
 - Bổ sung lý do loại `doi_tac` (0,85×, `simulated`) ở A3; sửa câu sai về kết quả duyệt chéo trong `group_report.md`.
+- Gate 2a: gửi hồ sơ cho hội đồng PhanDao, trình bày và trả lời câu hỏi về mốc ký chấp nhận MDE 6 điểm; nhóm được chấm 30/30, quyết định Go có điều kiện. Sửa theo góp ý: dời điều kiện 4 từ 2026-12-15 về 2026-12-05, trước khi mở pilot.
+- Ghi kết quả duyệt chéo vào `group_report.md`, hoàn thiện `phieu_cham.md` (nhóm chấm PhanDao) cùng TV3, chốt `TEAM.md` và commit nộp bài.
 
 ### Bằng chứng
 
-- Commit merge `50a4b33` và commit sửa lỗi trên `main`; `report/team/2A202603489_NguyenVanBa.md`.
+- Commit `50a4b33` (merge nhánh TV3), `5ca07d8` (sửa lỗi Windows và hồ sơ), `ea37570` (kết quả Gate 2a, dời điều kiện 4), `74cd5f4` (phiếu chấm PhanDao); `report/team/2A202603489_NguyenVanBa.md`.
 
-## HoVaTen-MSSV
-
-### Phần việc phụ trách
-
--
-
-### Đóng góp cụ thể
-
--
-
-### Bằng chứng
-
--
