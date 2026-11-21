@@ -1,9 +1,11 @@
 """Lab 13 · Định giá agent và lập kế hoạch pilot (Gate 2a) — bài làm của nhóm (file nộp).
-Chạy trong thư mục src/: python3 lab13.py   (cần pandas; Nhiệm vụ D cần thêm statsmodels)
-Không cần khoá API. Điền các chỗ ghi VIẾT Ở ĐÂY (đánh dấu TODO CP1…CP4). Dữ liệu trong hai file CSV là giả lập.
+Chạy trong thư mục src/: python -X utf8 lab13.py (cần pandas).
+Không cần khoá API. Dữ liệu trong hai file CSV là giả lập.
 Bản gốc chưa sửa nằm ở lab13_starter.py.
 """
 import math
+from statistics import NormalDist
+
 import pandas as pd
 
 # Bảng giá GIẢ ĐỊNH của lab (không phải giá thật của nhà cung cấp nào)
@@ -212,13 +214,69 @@ def in_bang_b4(runs, reqs):
           f"Thành công: {so_thanh_cong} | Token+tool: {token_tool:,.0f} đ")
     print(f"Phút làm lại trên toàn bộ ca lam_lai: trung bình {phut_ll_tb:.2f} phút (trung vị {lam_lai_all.median():.1f} phút)")
 
-    for nhan, phut_ll in [('Giả định 9 phút/ca làm lại', 9.0), (f'Dữ liệu thực {phut_ll_tb:.2f} phút/ca', phut_ll_tb)]:
+    for nhan, phut_ll in [('Giả định 9 phút/ca làm lại', 9.0), (f'Trung bình từ CSV {phut_ll_tb:.2f} phút/ca', phut_ll_tb)]:
         tien_lam_lai = so_lam_lai * phut_ll * LUONG_PHUT
         tong = token_tool + tien_xem_lai + tien_lam_lai
         cps = tong / so_thanh_cong
         hoa_von = (so_thanh_cong * BASELINE - token_tool - tien_lam_lai) / (so_co_ok * LUONG_PHUT)
         print(f"- {nhan}: Tổng {tong:,.0f} đ -> CPS {cps:,.0f} đ ({cps / BASELINE:.2f}x) [simulated] | "
               f"Hoà vốn khi xem lại <= {hoa_von:.1f} phút/ca")
+
+
+def co_mau_moi_nhom(p1, p2, z_alpha, z_power):
+    p_tb = (p1 + p2) / 2
+    sai_so_gop = math.sqrt(2 * p_tb * (1 - p_tb))
+    sai_so_rieng = math.sqrt(p1 * (1 - p1) + p2 * (1 - p2))
+    return math.ceil(((z_alpha * sai_so_gop + z_power * sai_so_rieng) / (p2 - p1)) ** 2)
+
+
+def in_co_mau_d1(reqs):
+    chuan = NormalDist()
+    z_alpha, z_power = chuan.inv_cdf(0.975), chuan.inv_cdf(0.80)
+    baseline, icc = 0.70, 0.02
+    nhan_vien_moi_nhom, depot_moi_nhom = 20, 6
+    n_5_diem = co_mau_moi_nhom(baseline, 0.75, z_alpha, z_power)
+    n_6_diem = co_mau_moi_nhom(baseline, 0.76, z_alpha, z_power)
+
+    m = 75
+    de = 1 + (m - 1) * icc
+    n_cum = math.ceil(n_5_diem * de)
+    so_nhan_vien = math.ceil(n_cum / m)
+    m_toi_thieu = math.ceil(n_6_diem * (1 - icc) / (nhan_vien_moi_nhom - n_6_diem * icc))
+    de_6_diem = 1 + (m_toi_thieu - 1) * icc
+
+    # Cohen h và hai đuôi của xấp xỉ chuẩn cho hai nhóm có cùng cỡ mẫu.
+    h = 2 * (math.asin(math.sqrt(0.75)) - math.asin(math.sqrt(baseline)))
+    dich_chuyen = h * math.sqrt(n_6_diem / 2)
+    power_5_diem = chuan.cdf(dich_chuyen - z_alpha) + chuan.cdf(-z_alpha - dich_chuyen)
+
+    mo_lai = reqs['mo_lai_trong_7_ngay'].eq(1)
+    trong_pham_vi = reqs['loai'].isin(['noi_dia', 'hang_nang'])
+    mo_lai_pham_vi = mo_lai[trong_pham_vi]
+
+    print('\n=== D1 · Cỡ mẫu pilot ===')
+    print(f'a) Theo yêu cầu: {n_5_diem:,} yêu cầu/nhóm cho mức chênh 5 điểm.')
+    print(f'b) Theo nhân viên, m = {m}: DE = {de:.2f}, cần {n_cum:,} yêu cầu/nhóm '
+          f'và {so_nhan_vien} nhân viên/nhóm ({2 * so_nhan_vien} nhân viên tổng cộng).')
+    print(f'c) {nhan_vien_moi_nhom} nhân viên/nhóm: trần hiệu dụng {nhan_vien_moi_nhom / icc:,.0f}.')
+    print(f'd) {depot_moi_nhom} depot/nhóm: trần hiệu dụng {depot_moi_nhom / icc:,.0f}.')
+    print(f'e) Mức chênh 6 điểm: {n_6_diem} yêu cầu hiệu dụng/nhóm, '
+          f'ít nhất {m_toi_thieu} yêu cầu/nhân viên, DE = {de_6_diem:.2f}, '
+          f'{nhan_vien_moi_nhom * m_toi_thieu:,} yêu cầu thực/nhóm.')
+    print(f'Power nếu tác động chỉ 5 điểm tại n = {n_6_diem}: {power_5_diem:.2%}.')
+    print(f'Mở lại trong 7 ngày: {mo_lai.sum()}/{len(mo_lai)} = {mo_lai.mean():.2%} toàn mẫu; '
+          f'{mo_lai_pham_vi.sum()}/{len(mo_lai_pham_vi)} = {mo_lai_pham_vi.mean():.2%} trong phạm vi.')
+
+
+def in_chi_so_e1(reqs):
+    mo_lai = reqs['mo_lai_trong_7_ngay'].eq(1)
+    dong_dung_han = reqs['dong_trong_24h'].eq(1) & reqs['mo_lai_trong_7_ngay'].eq(0)
+    da_xem_lai = reqs['duoc_xem_lai'].eq(1)
+    sua_hoac_bo = reqs.loc[da_xem_lai, 'quyet_dinh_xem_lai'].isin(['sua', 'bo'])
+    print('\n=== E1 · Chỉ số trong đợt chạy thử ===')
+    print(f'Chính: {dong_dung_han.sum()}/{len(dong_dung_han)} = {dong_dung_han.mean():.2%}.')
+    print(f'Dùng: {sua_hoac_bo.sum()}/{len(sua_hoac_bo)} = {sua_hoac_bo.mean():.2%}.')
+    print(f'An toàn: {mo_lai.sum()}/{len(mo_lai)} = {mo_lai.mean():.2%}.')
 
 
 if __name__ == '__main__':
@@ -231,6 +289,5 @@ if __name__ == '__main__':
     in_bang_b1_b2(runs, reqs)
     in_bang_b3(runs, reqs)
     in_bang_b4(runs, reqs)
-    # TODO CP4 · Nhiệm vụ D: cỡ mẫu.
-    #   from statsmodels.stats.proportion import proportion_effectsize
-    #   from statsmodels.stats.power import NormalIndPower
+    in_co_mau_d1(reqs)
+    in_chi_so_e1(reqs)
