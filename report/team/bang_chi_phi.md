@@ -38,6 +38,7 @@ Số tính bằng `src/lab13.py`. Mọi con số tính từ cột `_simulated` g
 | doi_tac | 68 | 54,4% | 1,88 | 10.215 đ (`simulated`) | 0,85× (`simulated`) |
 
 - `quoc_te` tốn **1,88×** mức nhân viên tự làm (`simulated`). Tỷ lệ `ok` giảm từ **30,0%** xuống **11,4%** rồi **2,2%** qua ba lần thử, nên lợi ích của lần chạy thêm rất thấp.
+- `doi_tac` sát ngưỡng (**0,85×**, thành công 54,4%, `simulated`) và có điều khoản riêng, nên cũng loại khỏi phạm vi pilot; pilot chỉ giữ `noi_dia` + `hang_nang`.
 
 ## A4 · Chi phí cố định (phạm vi noi_dia + hang_nang)
 

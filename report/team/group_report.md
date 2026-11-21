@@ -10,7 +10,7 @@ Báo cáo ngắn, tối đa 2 trang. Số liệu chi tiết nằm trong các fil
   1. Phạm Trường Chinh (MSSV: 2A202603426) — Người viết code (CP1–CP2) → Kỹ sư kiểm chứng & Event (CP3–CP5)
   2. Nguyễn Minh Quân (MSSV: 2A202603510) — Người kiểm số (CP1–CP2) → Người viết code (CP4–CP5)
   3. Trần Quang Nam (MSSV: 2A202603516) — Người gắn nhãn 1 & QA / Gatekeeper
-  4. Thành viên 4 (TV4) — Người gắn nhãn 2 kiêm Người giữ hồ sơ (Dossier Owner & Presenter Lead)
+  4. Nguyễn Văn Ba (MSSV: 2A202603489) — Người gắn nhãn 2 kiêm Người giữ hồ sơ (Dossier Owner & Presenter Lead)
 
 ## 2. Mục tiêu và cách tiếp cận
 
@@ -36,8 +36,8 @@ Nhóm chia làm 5 chặng thực thi bám sát quy trình và ma trận phân va
 - **Giới hạn chạy lại:** Giới hạn 2 lần chạy là tối ưu nhất cho toàn công ty (**6.901.220 đ**), rẻ hơn chạy 3 lần (7.037.585 đ) và chạy 1 lần (7.449.781 đ do đẩy 319 ca sang nhân viên).
 - **Phân loại lỗi:** Đạt tỉ lệ đồng thuận độc lập **90,0%** (18/20 ca), thống nhất khớp **20/20** đáp án chuẩn Google PAIR.
 - **Kế hoạch pilot:** Chia 20 nhân viên can thiệp vs 20 nhân viên đối chứng song song trên 12 depot. Cỡ mẫu hiệu dụng tối thiểu **859 yêu cầu/nhóm** (quan sát **5.980 yêu cầu/nhóm**, `m ≥ 299`, `DE = 6,96`).
-- **Đề xuất cuối:** **Go có điều kiện** (chỉ mở pilot khi thu hẹp phạm vi về `noi_dia + hang_nang`, vá 5 lỗi kỹ thuật cốt lõi và kiểm soát thời gian xem lại ≤ 4,8 phút/ca trong tuần đầu).
-- **Kết quả duyệt chéo Gate 2a:** Đạt **30/30 điểm** hội đồng từ nhóm chấm chéo ([report/team/phieu_cham.md](phieu_cham.md)).
+- **Đề xuất cuối:** **Go có điều kiện** (thu hẹp phạm vi về `noi_dia + hang_nang`, vá các lỗi kỹ thuật ca 7, 17, 18, 20, kiểm soát thời gian xem lại ≤ 4,8 phút/ca trong tuần đầu, Giám đốc vận hành ký chấp nhận MDE 6 điểm với power 64,17%).
+- **Kết quả duyệt chéo Gate 2a:** *(điền điểm và quyết định mà nhóm hội đồng chấm hồ sơ của nhóm mình sau buổi duyệt chéo)*. Phiếu nhóm mình chấm nhóm n + 1 nằm ở [phieu_cham.md](phieu_cham.md).
 
 ## 5. Khó khăn và cách xử lý
 
@@ -55,7 +55,7 @@ Nhóm chia làm 5 chặng thực thi bám sát quy trình và ma trận phân va
 | Phạm Trường Chinh (TV1) | Người viết code chặng 1 → Kỹ sư kiểm chứng | Lập trình A1–A4, B1–B4 trong `src/lab13.py`; thiết kế 10 event có `trace_id` trong `chi_so.md`; lập kế hoạch triển khai. |
 | Nguyễn Minh Quân (TV2) | Người kiểm số → Người viết code chặng 2 | Kiểm số bảng chi phí A/B; lập trình tính toán cỡ mẫu D1 và chỉ số E1 trong `src/lab13.py`; xây dựng bảng rủi ro kinh tế E2. |
 | Trần Quang Nam (TV3) | Người gắn nhãn 1 & QA / Gatekeeper | Gắn nhãn độc lập 20 ca lỗi CP3; hoàn thiện 5 câu D2 và 3 luật dừng 4 vế trong `pilot_plan.yaml`; đề xuất 2 chỉ số mới; viết `phieu_cham.md` và `group_report.md`. |
-| Thành viên 4 (TV4) | Người gắn nhãn 2 kiêm Giữ hồ sơ | Gắn nhãn độc lập 20 ca lỗi CP3; chủ trì hoàn thiện hồ sơ 1 trang `ho_so_launch_v0.md`; đại diện trình bày và phản biện Gate 2a. |
+| Nguyễn Văn Ba (TV4) | Người gắn nhãn 2 kiêm Giữ hồ sơ | Gắn nhãn độc lập 20 ca lỗi CP3; chủ trì hoàn thiện hồ sơ 1 trang `ho_so_launch_v0.md`; đại diện trình bày và phản biện Gate 2a. |
 
 ## 7. Hạn chế và hướng cải thiện
 

@@ -14,7 +14,7 @@
 |   1 | Phạm Trường Chinh | 2A202603426 | phemchinh1708@gmail.com | Khoaitay51 | Người viết code (CP1–CP2) → Kỹ sư kiểm chứng & Event (CP3–CP5) |
 |   2 | Nguyễn Minh Quân | 2A202603510 | | | Người kiểm số (CP1–CP2) → Người viết code (CP4–CP5) |
 |   3 | Trần Quang Nam | 2A202603516 | wgnam2k4@gmail.com | wgnam2k4 | Người gắn nhãn 1 & QA / Gatekeeper |
-|   4 |        |      |       |        | Người gắn nhãn 2 kiêm giữ hồ sơ |
+|   4 | Nguyễn Văn Ba | 2A202603489 | | | Người gắn nhãn 2 kiêm giữ hồ sơ |
 
 Bốn vai của lab:
 
@@ -93,6 +93,24 @@ Sao chép mục dưới đây cho từng thành viên.
 ### Bằng chứng
 
 - `report/team/bang_loi.md`, `report/team/pilot_plan.yaml`, `report/team/chi_so.md`, `report/team/ho_so_launch_v0.md`, `report/team/phieu_cham.md`, `report/team/group_report.md`, `report/team/2A202603516_TranQuangNam.md`.
+
+## NguyenVanBa-2A202603489
+
+### Phần việc phụ trách
+
+- Người gắn nhãn 2 (CP3) kiêm người giữ hồ sơ `report/team/ho_so_launch_v0.md`.
+- Tích hợp nhánh của các thành viên vào `main` và rà soát toàn bộ hồ sơ trước khi nộp.
+
+### Đóng góp cụ thể
+
+- Merge nhánh `tranquangnam` vào `main` (không xung đột); chạy lại toàn bộ checklist nộp bài (`lab13.py`, `yaml.safe_load`, dấu `?`, từ cấm).
+- Sửa `src/lab13.py` để `python lab13.py` chạy được trên console Windows (trước đó lỗi `UnicodeEncodeError` ngay dòng đầu).
+- Sửa `ho_so_launch_v0.md`: tách điều kiện có hai vai phụ trách thành hai điều kiện một vai; thêm điều kiện ký chấp nhận MDE 6 điểm (power 64,17%).
+- Bổ sung lý do loại `doi_tac` (0,85×, `simulated`) ở A3; sửa câu sai về kết quả duyệt chéo trong `group_report.md`.
+
+### Bằng chứng
+
+- Commit merge `50a4b33` và commit sửa lỗi trên `main`; `report/team/2A202603489_NguyenVanBa.md`.
 
 ## HoVaTen-MSSV
 

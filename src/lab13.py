@@ -1,12 +1,17 @@
 """Lab 13 · Định giá agent và lập kế hoạch pilot (Gate 2a) — bài làm của nhóm (file nộp).
-Chạy trong thư mục src/: python -X utf8 lab13.py (cần pandas).
+Chạy trong thư mục src/: python3 lab13.py (cần pandas).
 Không cần khoá API. Dữ liệu trong hai file CSV là giả lập.
 Bản gốc chưa sửa nằm ở lab13_starter.py.
 """
 import math
+import sys
 from statistics import NormalDist
 
 import pandas as pd
+
+# Console Windows mặc định cp1252 không in được tiếng Việt; ép stdout sang UTF-8.
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
 
 # Bảng giá GIẢ ĐỊNH của lab (không phải giá thật của nhà cung cấp nào)
 GIA_VAO = 26        # đồng cho 1.000 token đầu vào
